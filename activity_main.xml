@@ -1,115 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="50px"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Switch
-        android:id="@+id/switch2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="16dp"
-        android:minHeight="48dp"
-        android:text="시작"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
     <TextView
-        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
-        android:text="선택을 시작 하시겠습니까?"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="선택을 시작하시겠습니까?" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:background="#dd0"
-        app:layout_constraintTop_toBottomOf="@+id/switch2"
-        tools:layout_editor_absoluteX="29dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="시작함"
+            android:layout_marginRight="50px"
+            android:textColor="@color/black"/>
+
+        <Switch
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/switch1"
+            android:checked="false"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:visibility="invisible"
+        android:id="@+id/layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
 
         <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="19dp"
-            android:layout_marginStart="40dp"
-            android:text="좋아하는 동물을 선택하세요"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="64dp" />
-
-        <RadioGroup
-            android:id="@+id/radioGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3">
-
+            android:text="좋아하는 안드로이드 버전은?" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
             <RadioButton
-                android:id="@+id/radioButton1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="강아지"
-                android:textSize="20sp"
-                tools:layout_editor_absoluteX="40dp"
-                tools:layout_editor_absoluteY="153dp" />
-
+                android:checked="true"
+                android:id="@+id/radio_button1"
+                android:text="오레오(8.0)"/>
             <RadioButton
-                android:id="@+id/radioButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="고양이"
-                android:textSize="20sp"
-                tools:layout_editor_absoluteX="40dp"
-                tools:layout_editor_absoluteY="153dp" />
-
+                android:id="@+id/radio_button2"
+                android:text="파이(9.0)"/>
             <RadioButton
-                android:id="@+id/radioButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="토끼"
-                android:textSize="20sp"
-                tools:layout_editor_absoluteX="40dp"
-                tools:layout_editor_absoluteY="153dp" />
+                android:id="@+id/radio_button3"
+                android:text="Q(10.0)"/>
+
         </RadioGroup>
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="151dp"
-            android:layout_height="146dp"
-            android:layout_marginStart="96dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintStart_toEndOf="@+id/radioGroup"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:layout_width="600px"
+            android:layout_height="600px"
+            android:src="@drawable/an8"
+            android:scaleType="centerCrop"
+            android:id="@+id/img_view"
+            />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_exit"
+            android:text="종료"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_begin"
+            android:text="처음으로"/>
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="207dp" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="84dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
